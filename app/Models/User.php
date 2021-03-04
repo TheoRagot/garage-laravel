@@ -51,6 +51,14 @@ class User extends Authenticatable
                 'ended_at',
             ]);
     }
+    public function annoucements()
+    {
+        return $this->hasMany(Annoucement::class);
+    }
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
+    }
 
     public function isAdmin(): bool
     {

@@ -1,0 +1,30 @@
+<?php
+
+namespace Database\Factories;
+
+use App\Models\Annoucement;
+use Illuminate\Database\Eloquent\Factories\Factory;
+
+class AnnoucementFactory extends Factory
+{
+    /**
+     * The name of the factory's corresponding model.
+     *
+     * @var string
+     */
+    protected $model = Annoucement::class;
+
+    /**
+     * Define the model's default state.
+     *
+     * @return array
+     */
+    public function definition()
+    {
+        return [
+            'title' => $this->faker->word(),
+            'content' => $this->faker->sentence(40, true),
+            'price' => $this->faker->numberBetween(1, 10000),
+        ];
+    }
+}
